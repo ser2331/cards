@@ -13,7 +13,7 @@ export function getDeck() {
       response => response.json()
     );
     const cards = await fetch(
-      `/api/deck/${deck.deck_id}/draw?count=${deck.remaining}`
+      `/api/deck/${deck.deck_id}/draw/?count=${deck.remaining}`
     ).then(response => response.json());
 
     dispatch({

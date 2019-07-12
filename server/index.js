@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/api/*", (req, res) => {
-  fetch(`https://deckofcardsapi.com/${req.originalUrl}`, {
+  fetch(`https://deckofcardsapi.com${req.originalUrl}`, {
     mode: "no-cors"
   })
     .then(res => res.json())
