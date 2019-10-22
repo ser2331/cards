@@ -2,7 +2,6 @@
 export const ACTIONS = {
   SET_DECK: "SET_DECK",
   SET_CARDS: "SET_CARDS",
-  SHUFFLE_CARDS: "SHUFFLE_CARDS",
   SORT_DECK: "SORT_DECK"
 };
 
@@ -25,9 +24,6 @@ export function getDeck() {
   };
 }
 
-export function shuffleDeck() {
-  return dispatch => {};
-}
 export function sumDeck() {
   return dispatch => {};
 }

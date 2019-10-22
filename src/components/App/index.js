@@ -2,19 +2,39 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { getDeck } from "../../redux/action";
-import Deck from "../Deck";
+import Tasks from "../Tasks";
+import Cards from "../Cards";
 
 const App = ({ deck, getDeck }) => (
   <div className="tc flex flex-column items-center justify-center">
     {deck ? (
-      <Deck cards={deck.cards} />
+      <>
+        <Tasks />
+        <Cards cards={deck.cards} />
+      </>
     ) : (
-      <button
-        onClick={() => getDeck()}
-        className="bg-animate bg-dark-pink hover-bg-light-pink b--dark-blue inline-flex items-center ma2 tc br2 bw3 dark-blue pa4 f1"
-      >
-        Open a Deck of Cards
-      </button>
+      <>
+        <div className="lightest-blue tl">
+          <p>
+            Currently, clicking "Fetch Cards" multiple times sends multiple
+            requests to API.
+          </p>
+          <p className="b">
+            Task: Add loading component, so we can only make one request at a
+            time.
+          </p>
+        </div>
+        <button
+          onClick={() => getDeck()}
+          className="bg-animate bg-blue hover-bg-light-blue inline-flex items-center bw0 ma1 tc navy pv2 ph6 br4 f3"
+        >
+          Fetch Cards
+        </button>
+        <p className="i f6 light-blue">
+          Note: extra credit will be given for refactoring/suggestions done
+          throughout.
+        </p>
+      </>
     )}
   </div>
 );
