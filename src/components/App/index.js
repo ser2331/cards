@@ -5,12 +5,12 @@ import { getDeck } from "../../redux/action";
 import Tasks from "../Tasks";
 import Cards from "../Cards";
 
-const App = ({ deck, getDeck }) => (
+const App = ({ deck, getDeck, sort }) => (
   <div className="tc flex flex-column items-center justify-center">
     {deck ? (
       <>
         <Tasks />
-        <Cards cards={deck.cards} />
+        <Cards cards={deck.cards} sort={sort}/>
       </>
     ) : (
       <>
@@ -39,8 +39,9 @@ const App = ({ deck, getDeck }) => (
   </div>
 );
 
-const mapStateToProps = ({ deck }) => ({
-  deck
+const mapStateToProps = ({ deck, sort }) => ({
+  deck,
+  sort
 });
 
 export default connect(

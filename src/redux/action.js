@@ -25,8 +25,17 @@ export function getDeck() {
 }
 
 export function sumDeck() {
-  return dispatch => {};
+  return dispatch => {
+    dispatch({
+      type: ACTIONS.SET_DECK
+    })
+  };
 }
-export function sortDeck() {
-  return dispatch => {};
+export function sortDeck(payload) {
+  return dispatch => {
+    dispatch({
+      type: ACTIONS.SORT_DECK,
+      payload
+    })
+  };
 }
