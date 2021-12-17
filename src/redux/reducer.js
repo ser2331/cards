@@ -40,14 +40,14 @@ const reducer = (state = defaultState, action) => {
         return Number(obj.value)
       });
 
-      const sumSalaries = (arr) => {
+      const sumBlackCards = (arr) => {
         let sum = 0;
         for (let val of Object.values(arr)) {
           sum += val;
         }
         return sum;
       };
-      const blackCardsSum = sumSalaries(numbers);
+      const blackCardsSum = sumBlackCards(numbers);
 
       return {
         ...state,
